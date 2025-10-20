@@ -52,7 +52,7 @@ def parse_args(argv: Optional[Iterable[str]] = None) -> argparse.Namespace:
         "-o",
         "--output",
         default="%(title)s.%(ext)s",
-        help="Output filename template. Defaults to '%(title)s.%(ext)s'.",
+        help="Output filename template. Defaults to '%%(title)s.%%(ext)s'.",
     )
     parser.add_argument(
         "--output-dir",
