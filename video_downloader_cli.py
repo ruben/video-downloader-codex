@@ -45,7 +45,14 @@ class DownloadConfig:
 
 def parse_args(argv: Optional[Iterable[str]] = None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Download a single video (or optionally a playlist) using yt-dlp."
+        description="Download a single video (or optionally a playlist) using yt-dlp.",
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog=(
+            "Examples:\n"
+            "  python video_downloader_cli.py \"https://youtu.be/dQw4w9WgXcQ\"\n"
+            "  python video_downloader_cli.py \"https://youtu.be/dQw4w9WgXcQ\" --audio-only --audio-format mp3\n"
+            "  python video_downloader_cli.py \"https://youtu.be/dQw4w9WgXcQ\" --list-formats"
+        ),
     )
     parser.add_argument("url", help="Video or playlist URL to download.")
     parser.add_argument(

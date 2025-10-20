@@ -15,3 +15,5 @@ def test_help_option_succeeds():
     assert result.returncode == 0
     assert "optional arguments" in result.stdout
     assert "--output" in result.stdout
+    assert "Examples:" in result.stdout
+    assert "--list-formats" in result.stdout
